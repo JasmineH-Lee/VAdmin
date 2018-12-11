@@ -1,7 +1,7 @@
 <template>
 <div>
     <div>表格</div>
-    <div>
+    <div style="background-color: #fff; padding: 10px;">
         <VTable
           :table-options="tableOptions"
           :table-data="tableData">
