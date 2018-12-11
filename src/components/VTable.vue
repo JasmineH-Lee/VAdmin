@@ -50,13 +50,21 @@
             <div class="refresh-btn">刷新按钮</div>
             <div class="pager">
               <ul class="pager-ul">
-                <li>上一页</li>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>下一页</li>
+                <li class="page-item">
+                  <a href="">
+                    <span>&laquo;</span>
+                  </a>
+                </li>
+                <li class="page-item"><a href="">1</a></li>
+                <li class="page-item"><a href="">2</a></li>
+                <li class="page-item"><a href="">3</a></li>
+                <li class="page-item"><a href="">4</a></li>
+                <li class="page-item"><a href="">5</a></li>
+                <li class="page-item">
+                  <a href="">
+                    <span>&raquo;</span>
+                  </a>
+                </li>
               </ul>
             </div>
             <div class="page-index">
@@ -114,6 +122,39 @@ export default {
 }
 </script>
 <style lang="less">
+.page-index {
+  display: inline-block;
+
+}
+.pager {
+  display: inline-block;
+}
+.pager-ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid #999;
+  border-radius: 4px;
+  // 为了消除inline-block 之间的空白
+  font-size: 0;
+  li {
+    margin: 0;
+    display: inline-block;
+    border-right: 1px solid #999;
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    a {
+      text-decoration: none;
+    }
+  }
+  li:last-child {
+    border: none;
+  }
+}
+
 table {
   color: #606060;
 }
@@ -178,19 +219,17 @@ table {
     }
 }
 .pagination-block {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-end;
-  align-items: center;
+  // display: flex;
+  // flex-flow: row nowrap;
+  // justify-content: flex-end;
+  // align-items: center;
   .pager {
     flex-grow: 3;
   }
-  .pager-ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-flow: row nowrap;
-  }
+  // .pager-ul {
+  //   margin: 0;
+  //   padding: 0;
+  //   list-style: none;
+  // }
 }
 </style>
