@@ -2,8 +2,8 @@
   <div>
     <div>
       <div class="table-wrap">
-        <div class="table-header" ref="tableHead">
-          <table>
+        <div class="table table-header" ref="tableHead">
+          <table width="600" cellpadding="5px 8px;" rules="none">
             <colgroup>
               <col style="width: 300px;">
               <col style="width: 300px;">
@@ -22,7 +22,7 @@
           </table>
         </div>
         <div class="table-body" ref="tableBody">
-          <table>
+          <table class="table table-hover" cellpadding="5px 8px;" cellspacing="0" border="1" rules="rows">
             <colgroup>
               <col style="width: 300px;">
               <col style="width: 300px;">
@@ -113,16 +113,59 @@ export default {
   }
 }
 </script>
-<style>
-.table-wrap {
+<style lang="less">
+table {
+  color: #606060;
 }
+.table th,
+.table td {
+  padding: 0.45rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table-sm th,
+.table-sm td {
+  padding: 0.3rem;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table-hover tbody tr:hover{
+  background-color: rgba(0, 0, 0, 0.075);
+}
+
 .table-header {
     width: 1000px;
     overflow: hidden;
+    table {
+      color: #333;
+      border-color: #ddd;
+      thead tr {
+        border-top: 1px solid #ddd;
+        border-bottom: none;
+      }
+    }
 }
 .table-body {
     width: 1000px;
     overflow: scroll;
+    table {
+      tbody tr {
+        border-top: none;
+        border-bottom: 1px solid #ddd;
+      }
+    }
+}
+.table-footer {
+  margin-top: 30px;
 }
 table {
     width: 100%;
@@ -130,21 +173,24 @@ table {
     background: 0 0;
     border: none;
     table-layout: fixed;
+    th,td {
+      text-align: center;
+    }
 }
 .pagination-block {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
   align-items: center;
-}
-.pager {
-  flex-grow: 3;
-}
-.pager-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-flow: row nowrap;
+  .pager {
+    flex-grow: 3;
+  }
+  .pager-ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
+  }
 }
 </style>
