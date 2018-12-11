@@ -1,12 +1,16 @@
 // https://eslint.org/docs/user-guide/configuring
 
 module.exports = {
+  // 以当前目录为根目录，不再向上查找
   root: true,
   parserOptions: {
     parser: 'babel-eslint'
   },
   env: {
     browser: true,
+    es6: true,
+    commonjs: true,
+    node: true
   },
   extends: [
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
@@ -25,5 +29,7 @@ module.exports = {
     'generator-star-spacing': 'off',
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    
+
   }
 }
